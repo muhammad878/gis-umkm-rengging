@@ -1,6 +1,6 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON, ZoomControl } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useState } from "react";
@@ -24,14 +24,15 @@ const Map = () => {
         })();
 
         // Fetch GeoJSON data
-        fetch("/data/jambu timur village.geojson")
+        fetch("/data/village_boundaries.geojson")
             .then((res) => res.json())
             .then((data) => setGeoJsonData(data))
             .catch((err) => console.error("Error loading GeoJSON:", err));
     }, []);
 
     return (
-        <MapContainer center={[-6.535, 110.74]} zoom={14} scrollWheelZoom={true} className="h-full w-full outline-none">
+        <MapContainer center={[-6.535, 110.74]} zoom={14} scrollWheelZoom={true} zoomControl={false} className="h-full w-full outline-none">
+            <ZoomControl position="bottomright" />
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
