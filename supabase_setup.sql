@@ -58,26 +58,64 @@ ALTER TABLE location_images ENABLE ROW LEVEL SECURITY;
 ALTER TABLE infrastructure_conditions ENABLE ROW LEVEL SECURITY;
 
 -- RLS Policies
--- Public read
+
+-- CATEGORIES POLICIES
+DROP POLICY IF EXISTS "Public read categories" ON categories;
 CREATE POLICY "Public read categories" ON categories FOR SELECT USING (true);
-CREATE POLICY "Public read subcategories" ON subcategories FOR SELECT USING (true);
-CREATE POLICY "Public read locations" ON locations FOR SELECT USING (true);
-CREATE POLICY "Public read location images" ON location_images FOR SELECT USING (true);
-CREATE POLICY "Public read infrastructure conditions" ON infrastructure_conditions FOR SELECT USING (true);
 
--- Admin insert
+DROP POLICY IF EXISTS "Admin insert categories" ON categories;
 CREATE POLICY "Admin insert categories" ON categories FOR INSERT WITH CHECK (true);
-CREATE POLICY "Admin insert subcategories" ON subcategories FOR INSERT WITH CHECK (true);
-CREATE POLICY "Admin insert locations" ON locations FOR INSERT WITH CHECK (true);
-CREATE POLICY "Admin insert location images" ON location_images FOR INSERT WITH CHECK (true);
-CREATE POLICY "Admin insert infra conditions" ON infrastructure_conditions FOR INSERT WITH CHECK (true);
 
--- Admin update
+DROP POLICY IF EXISTS "Admin update categories" ON categories;
+CREATE POLICY "Admin update categories" ON categories FOR UPDATE USING (true);
+
+DROP POLICY IF EXISTS "Admin delete categories" ON categories;
+CREATE POLICY "Admin delete categories" ON categories FOR DELETE USING (true);
+
+-- SUBCATEGORIES POLICIES
+DROP POLICY IF EXISTS "Public read subcategories" ON subcategories;
+CREATE POLICY "Public read subcategories" ON subcategories FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Admin insert subcategories" ON subcategories;
+CREATE POLICY "Admin insert subcategories" ON subcategories FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Admin update subcategories" ON subcategories;
+CREATE POLICY "Admin update subcategories" ON subcategories FOR UPDATE USING (true);
+
+DROP POLICY IF EXISTS "Admin delete subcategories" ON subcategories;
+CREATE POLICY "Admin delete subcategories" ON subcategories FOR DELETE USING (true);
+
+-- LOCATIONS POLICIES
+DROP POLICY IF EXISTS "Public read locations" ON locations;
+CREATE POLICY "Public read locations" ON locations FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Admin insert locations" ON locations;
+CREATE POLICY "Admin insert locations" ON locations FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Admin update locations" ON locations;
 CREATE POLICY "Admin update locations" ON locations FOR UPDATE USING (true);
 
--- Admin delete
+DROP POLICY IF EXISTS "Admin delete locations" ON locations;
 CREATE POLICY "Admin delete locations" ON locations FOR DELETE USING (true);
-CREATE POLICY "Admin delete images" ON location_images FOR DELETE USING (true);
+
+-- LOCATION IMAGES POLICIES
+DROP POLICY IF EXISTS "Public read location images" ON location_images;
+CREATE POLICY "Public read location images" ON location_images FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Admin insert location images" ON location_images;
+CREATE POLICY "Admin insert location images" ON location_images FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Admin delete location images" ON location_images;
+CREATE POLICY "Admin delete location images" ON location_images FOR DELETE USING (true);
+
+-- INFRASTRUCTURE CONDITIONS POLICIES
+DROP POLICY IF EXISTS "Public read infrastructure conditions" ON infrastructure_conditions;
+CREATE POLICY "Public read infrastructure conditions" ON infrastructure_conditions FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Admin insert infra conditions" ON infrastructure_conditions;
+CREATE POLICY "Admin insert infra conditions" ON infrastructure_conditions FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Admin delete infra conditions" ON infrastructure_conditions;
 CREATE POLICY "Admin delete infra conditions" ON infrastructure_conditions FOR DELETE USING (true);
 
 -- Triggers

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { ChevronLeft, Save } from "lucide-react";
@@ -20,6 +20,15 @@ export default function CreateCategoryPage() {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    useEffect(() => {
+        const checkSession = async () => {
+            const { data: { session }, error } = await supabase.auth.getSession();
+            console.log("Current session:", session);
+            if (error) console.error("Session error:", error);
+        };
+        checkSession();
+    }, []);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -38,7 +47,8 @@ export default function CreateCategoryPage() {
             router.refresh();
         } catch (error) {
             console.error("Error creating category:", error);
-            alert("Gagal menambahkan kategori.");
+            console.error("Error details:", JSON.stringify(error, null, 2));
+            alert(`Gagal menambahkan kategori: ${JSON.stringify(error)}`);
         } finally {
             setLoading(false);
         }
