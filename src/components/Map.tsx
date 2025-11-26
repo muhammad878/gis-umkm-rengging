@@ -52,35 +52,7 @@ const Map = () => {
                 />
             )}
 
-            {/* Kantor Desa - Approximate location based on GeoJSON center */}
-            <Marker position={[-6.535, 110.74]}>
-                <Popup>
-                    <div className="p-2">
-                        <h3 className="font-bold text-lg">Kantor Desa Jambu Timur</h3>
-                        <p className="text-sm text-gray-600">Pusat pemerintahan desa.</p>
-                    </div>
-                </Popup>
-            </Marker>
 
-            {/* Sekolah - Nearby */}
-            <Marker position={[-6.533, 110.742]}>
-                <Popup>
-                    <div className="p-2">
-                        <h3 className="font-bold text-lg">SDN 1 Jambu Timur</h3>
-                        <p className="text-sm text-gray-600">Sekolah Dasar Negeri.</p>
-                    </div>
-                </Popup>
-            </Marker>
-
-            {/* Masjid - Nearby */}
-            <Marker position={[-6.537, 110.738]}>
-                <Popup>
-                    <div className="p-2">
-                        <h3 className="font-bold text-lg">Masjid Jami'</h3>
-                        <p className="text-sm text-gray-600">Masjid utama desa.</p>
-                    </div>
-                </Popup>
-            </Marker>
         </MapContainer>
     );
 };

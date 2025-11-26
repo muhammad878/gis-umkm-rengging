@@ -1,10 +1,46 @@
 "use client";
 
 import { Search, Filter, Layers, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabaseClient";
+
+interface Category {
+    id: string;
+    name: string;
+    subcategories: Subcategory[];
+}
+
+interface Subcategory {
+    id: string;
+    name: string;
+}
 
 const ControlPanel = () => {
     const [isOpen, setIsOpen] = useState(true);
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const { data: categoriesData, error: categoriesError } = await supabase
+                    .from('categories')
+                    .select('*, subcategories(*)');
+
+                if (categoriesError) throw categoriesError;
+
+                if (categoriesData) {
+                    setCategories(categoriesData);
+                }
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCategories();
+    }, []);
 
     return (
         <>
@@ -25,7 +61,7 @@ const ControlPanel = () => {
             <div className={`${isOpen ? 'w-64' : 'w-0'} h-screen bg-white border-r border-gray-200 flex flex-col z-40 shadow-lg transition-all duration-300 overflow-hidden`}>
                 <div className="p-4 border-b border-gray-100">
                     <h1 className="text-base font-bold text-gray-900 whitespace-nowrap">SIG Jambu Timur</h1>
-                    <p className="text-xs text-gray-500 mt-1 whitespace-nowrap">Infrastruktur &amp; Fasilitas</p>
+                    <p className="text-xs text-gray-500 mt-1 whitespace-nowrap">Infrastruktur & Fasilitas</p>
                 </div>
 
                 <div className="p-3 overflow-y-auto flex-1">
@@ -49,23 +85,34 @@ const ControlPanel = () => {
                             <button className="text-[10px] text-blue-600 font-medium hover:text-blue-700 cursor-pointer">Reset</button>
                         </div>
 
-                        <div className="space-y-1.5">
-                            {[
-                                "Kantor Desa",
-                                "Sekolah",
-                                "Masjid & Mushola",
-                                "Posyandu",
-                                "Lapangan Desa",
-                                "Jalan Utama",
-                                "Jembatan",
-                                "Pasar"
-                            ].map((layer) => (
-                                <label key={layer} className="flex items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg cursor-pointer group">
-                                    <input type="checkbox" className="w-3.5 h-3.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer" defaultChecked />
-                                    <span className="text-xs text-gray-700 group-hover:text-gray-900">{layer}</span>
-                                </label>
-                            ))}
-                        </div>
+                        {loading ? (
+                            <div className="text-xs text-gray-500">Memuat kategori...</div>
+                        ) : (
+                            <div className="space-y-4">
+                                {categories.map((category) => (
+                                    <div key={category.id}>
+                                        <h3 className="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-2">{category.name}</h3>
+                                        <div className="space-y-1.5">
+                                            {category.subcategories?.map((sub) => (
+                                                <label key={sub.id} className="flex items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg cursor-pointer group">
+                                                    <input type="checkbox" className="w-3.5 h-3.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer" defaultChecked />
+                                                    <span className="text-xs text-gray-700 group-hover:text-gray-900">{sub.name}</span>
+                                                </label>
+                                            ))}
+                                            {(!category.subcategories || category.subcategories.length === 0) && (
+                                                <label className="flex items-center gap-2 p-1.5 hover:bg-gray-50 rounded-lg cursor-pointer group">
+                                                    <input type="checkbox" className="w-3.5 h-3.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer" defaultChecked />
+                                                    <span className="text-xs text-gray-700 group-hover:text-gray-900">Semua {category.name}</span>
+                                                </label>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
+                                {categories.length === 0 && (
+                                    <div className="text-xs text-gray-500 italic">Belum ada kategori data.</div>
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     {/* Filters */}

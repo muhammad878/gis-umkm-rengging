@@ -1,6 +1,7 @@
 "use client";
 
-import { Home, Map as MapIcon, Database, Settings, Menu } from "lucide-react";
+import { Home, Map as MapIcon, Database, Settings, Menu, Shield } from "lucide-react";
+import Link from "next/link";
 
 const Sidebar = () => {
     return (
@@ -10,9 +11,12 @@ const Sidebar = () => {
             </div>
 
             <nav className="flex-1 flex flex-col gap-6 w-full items-center">
-                <button className="p-3 rounded-xl bg-blue-50 text-blue-600 transition-colors cursor-pointer">
+                <Link href="/" className="p-3 rounded-xl bg-blue-50 text-blue-600 transition-colors cursor-pointer">
                     <Home className="w-5 h-5" />
-                </button>
+                </Link>
+                <Link href="/admin" className="p-3 rounded-xl text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-colors cursor-pointer" title="Admin Dashboard">
+                    <Shield className="w-5 h-5" />
+                </Link>
                 <button className="p-3 rounded-xl text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-colors cursor-pointer">
                     <Database className="w-5 h-5" />
                 </button>
