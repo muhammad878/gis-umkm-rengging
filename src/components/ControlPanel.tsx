@@ -36,17 +36,17 @@ interface ControlPanelProps {
   currentView?: ViewType;
   currentStyle?: string;
   onStyleChange?: (style: string) => void;
-  onOpenChange?: (isOpen: boolean) => void;
+  isOpen: boolean;
+  onOpenChange: (isOpen: boolean) => void;
   searchQuery?: string;
   onSearchChange?: (query: string) => void;
-  forceOpen?: number; // Increment to force open
   onLocationClick?: (location: Location) => void;
 }
 
 const ControlPanel = ({
   categories,
   locations,
-  allLocations, // Destructure allLocations
+  allLocations,
   selectedSubcategories,
   onSubcategoriesChange,
   selectedConditions,
@@ -55,34 +55,17 @@ const ControlPanel = ({
   currentView = "layers",
   currentStyle = "streets",
   onStyleChange,
+  isOpen,
   onOpenChange,
   searchQuery = "",
   onSearchChange,
-  forceOpen = 0,
   onLocationClick,
 }: ControlPanelProps) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  // Notify parent of state changes
-  useEffect(() => {
-    onOpenChange?.(isOpen);
-  }, [isOpen, onOpenChange]);
-
-  // Auto-open when view changes
-  useEffect(() => {
-    setIsOpen(true);
-  }, [currentView]);
-
-  // Force open when forceOpen changes (clicked same icon)
-  useEffect(() => {
-    if (forceOpen > 0) {
-      setIsOpen(true);
-    }
-  }, [forceOpen]);
+  // Internal state removed, using controlled isOpen prop
 
   const handleToggle = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
+    onOpenChange(!isOpen);
+  }, [isOpen, onOpenChange]);
 
   const handleSubcategoryChange = useCallback(
     (id: string) => {

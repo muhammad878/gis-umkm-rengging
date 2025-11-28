@@ -147,6 +147,8 @@ export default function Home() {
         currentView={currentView}
         onViewChange={handleViewChange}
         onPanelOpen={handlePanelOpen}
+        isPanelOpen={controlPanelOpen}
+        onPanelToggle={setControlPanelOpen}
       />
 
       <ControlPanel
@@ -161,10 +163,10 @@ export default function Home() {
         currentView={currentView}
         currentStyle={mapStyle}
         onStyleChange={setMapStyle}
+        isOpen={controlPanelOpen}
         onOpenChange={setControlPanelOpen}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        forceOpen={forceOpenCounter}
         onLocationClick={handleLocationClick}
       />
 

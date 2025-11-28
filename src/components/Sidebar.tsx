@@ -22,6 +22,8 @@ interface SidebarProps {
   currentView?: ViewType;
   onViewChange?: (view: ViewType) => void;
   onPanelOpen?: () => void;
+  isPanelOpen?: boolean;
+  onPanelToggle?: (isOpen: boolean) => void;
   mode?: "map" | "admin";
 }
 
@@ -44,17 +46,27 @@ const Sidebar = ({
   currentView = "layers",
   onViewChange,
   onPanelOpen,
+  isPanelOpen,
+  onPanelToggle,
   mode = "map",
 }: SidebarProps) => {
   const pathname = usePathname();
 
   const handleClick = useCallback(
     (view: ViewType) => {
-      onViewChange?.(view);
-      // Always request panel open when any icon is clicked
-      onPanelOpen?.();
+      if (mode === "map") {
+        if (view === currentView && isPanelOpen) {
+          onPanelToggle?.(false);
+        } else {
+          onViewChange?.(view);
+          onPanelToggle?.(true);
+        }
+      } else {
+        onViewChange?.(view);
+        onPanelOpen?.();
+      }
     },
-    [onViewChange, onPanelOpen]
+    [currentView, isPanelOpen, mode, onViewChange, onPanelToggle, onPanelOpen]
   );
 
   return (
