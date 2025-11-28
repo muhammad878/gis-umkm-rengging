@@ -27,6 +27,7 @@ const PANEL_HEADERS: Record<ViewType, { title: string; subtitle: string }> = {
 interface ControlPanelProps {
   categories: Category[];
   locations: Location[];
+  allLocations?: Location[]; // Added allLocations prop
   selectedSubcategories: string[];
   onSubcategoriesChange: (subcategories: string[]) => void;
   selectedConditions: string[];
@@ -45,6 +46,7 @@ interface ControlPanelProps {
 const ControlPanel = ({
   categories,
   locations,
+  allLocations, // Destructure allLocations
   selectedSubcategories,
   onSubcategoriesChange,
   selectedConditions,
@@ -157,6 +159,7 @@ const ControlPanel = ({
           {currentView === "layers" && (
             <LayersView
               categories={categories}
+              locations={allLocations || locations} // Use allLocations if available, fallback to locations
               selectedSubcategories={selectedSubcategories}
               selectedConditions={selectedConditions}
               loading={loading}

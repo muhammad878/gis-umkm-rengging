@@ -1,12 +1,13 @@
 "use client";
 
 import { Search, Filter, Layers, ChevronDown, ChevronRight } from "lucide-react";
-import { Category } from "@/types";
+import { Category, Location } from "@/types";
 import { CONDITION_FILTERS } from "@/constants";
 import { useState, useMemo } from "react";
 
 interface LayersViewProps {
   categories: Category[];
+  locations: Location[];
   selectedSubcategories: string[];
   selectedConditions: string[];
   loading: boolean;
@@ -20,6 +21,7 @@ interface LayersViewProps {
 
 export const LayersView = ({
   categories,
+  locations,
   selectedSubcategories,
   selectedConditions,
   loading,
@@ -30,6 +32,17 @@ export const LayersView = ({
   onSubcategoriesChange,
   onConditionChange,
 }: LayersViewProps) => {
+  // Calculate used subcategory IDs
+  const usedSubcategoryIds = useMemo(() => {
+    const ids = new Set<string>();
+    locations.forEach((loc) => {
+      if (loc.subcategory_id) {
+        ids.add(loc.subcategory_id);
+      }
+    });
+    return ids;
+  }, [locations]);
+
   return (
     <>
       {/* Search */}
@@ -67,16 +80,20 @@ export const LayersView = ({
               <CategoryItem
                 key={category.id}
                 category={category}
+                usedSubcategoryIds={usedSubcategoryIds}
                 selectedSubcategories={selectedSubcategories}
                 onSubcategoryChange={onSubcategoryChange}
                 onCategoryToggle={(cat, isChecked) => {
-                  if (cat.subcategories && cat.subcategories.length > 0) {
-                    const subIds = cat.subcategories.map((s) => s.id);
-                    // Also include the category ID itself to handle items with null subcategory
+                  // Filter subcategories to only include used ones
+                  const visibleSubcategories = cat.subcategories?.filter(s => usedSubcategoryIds.has(s.id)) || [];
+
+                  if (visibleSubcategories.length > 0) {
+                    const subIds = visibleSubcategories.map((s) => s.id);
+                    // Also include the category ID itself
                     const allIds = [...subIds, cat.id];
 
                     if (isChecked) {
-                      // Add all subcategories + category ID that are not already selected
+                      // Add all visible subcategories + category ID that are not already selected
                       const toAdd = allIds.filter(
                         (id) => !selectedSubcategories.includes(id)
                       );
@@ -85,7 +102,7 @@ export const LayersView = ({
                         ...toAdd,
                       ]);
                     } else {
-                      // Remove all subcategories + category ID
+                      // Remove all visible subcategories + category ID
                       const newSelected = selectedSubcategories.filter(
                         (id) => !allIds.includes(id)
                       );
@@ -137,6 +154,7 @@ export const LayersView = ({
 // Extracted sub-component for category items
 interface CategoryItemProps {
   category: Category;
+  usedSubcategoryIds: Set<string>;
   selectedSubcategories: string[];
   onSubcategoryChange: (id: string) => void;
   onCategoryToggle: (category: Category, isChecked: boolean) => void;
@@ -144,38 +162,44 @@ interface CategoryItemProps {
 
 const CategoryItem = ({
   category,
+  usedSubcategoryIds,
   selectedSubcategories,
   onSubcategoryChange,
   onCategoryToggle,
 }: CategoryItemProps) => {
   const [isExpanded, setIsExpanded] = useState(true);
-  const hasSubcategories =
-    category.subcategories && category.subcategories.length > 0;
 
-  // Check if all subcategories are selected
+  // Filter subcategories based on usage
+  const visibleSubcategories = useMemo(() => {
+    return category.subcategories?.filter(sub => usedSubcategoryIds.has(sub.id)) || [];
+  }, [category.subcategories, usedSubcategoryIds]);
+
+  const hasSubcategories = visibleSubcategories.length > 0;
+
+  // Check if all visible subcategories are selected
   const isAllSelected = useMemo(() => {
     if (!hasSubcategories) {
       return selectedSubcategories.includes(category.id);
     }
-    // Check if all subcategories AND the category itself (for null subcategory items) are selected
+    // Check if all visible subcategories AND the category itself are selected
     return (
-      category.subcategories.every((sub) =>
+      visibleSubcategories.every((sub) =>
         selectedSubcategories.includes(sub.id)
       ) && selectedSubcategories.includes(category.id)
     );
-  }, [category, selectedSubcategories, hasSubcategories]);
+  }, [category.id, selectedSubcategories, hasSubcategories, visibleSubcategories]);
 
-  // Check if some but not all subcategories are selected
+  // Check if some but not all visible subcategories are selected
   const isIndeterminate = useMemo(() => {
     if (!hasSubcategories) return false;
-    const subIds = category.subcategories.map((s) => s.id);
+    const subIds = visibleSubcategories.map((s) => s.id);
     // Include category.id in the count of "selectable items"
     const allIds = [...subIds, category.id];
     const selectedCount = allIds.filter((id) =>
       selectedSubcategories.includes(id)
     ).length;
     return selectedCount > 0 && selectedCount < allIds.length;
-  }, [category, selectedSubcategories, hasSubcategories]);
+  }, [category.id, selectedSubcategories, hasSubcategories, visibleSubcategories]);
 
   const handleCategoryClick = () => {
     onCategoryToggle(category, !isAllSelected);
@@ -216,9 +240,7 @@ const CategoryItem = ({
         <div className="p-2 space-y-1 bg-white">
           {hasSubcategories ? (
             <>
-              {/* Optional: Add a specific checkbox for "Uncategorized" items if needed, 
-                  but for now we just rely on the parent checkbox to toggle category.id */}
-              {category.subcategories.map((sub) => (
+              {visibleSubcategories.map((sub) => (
                 <CheckboxItem
                   key={sub.id}
                   id={sub.id}

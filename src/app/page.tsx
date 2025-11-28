@@ -152,6 +152,7 @@ export default function Home() {
       <ControlPanel
         categories={categories}
         locations={filteredLocations}
+        allLocations={locations}
         selectedSubcategories={selectedSubcategories}
         onSubcategoriesChange={setSelectedSubcategories}
         selectedConditions={selectedConditions}
