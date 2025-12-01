@@ -152,6 +152,7 @@ const ControlPanel = ({
               onSubcategoryChange={handleSubcategoryChange}
               onSubcategoriesChange={onSubcategoriesChange}
               onConditionChange={handleConditionChange}
+              onLocationClick={onLocationClick}
             />
           )}
           {currentView === "list" && (
