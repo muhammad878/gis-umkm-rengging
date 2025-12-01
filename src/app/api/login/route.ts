@@ -9,10 +9,12 @@ export async function POST(req: NextRequest) {
   const adminPassword = process.env.ADMIN_PASSWORD || "admin123";
 
   if (username === adminUser && password === adminPassword) {
-    const redirectUrl =
-      (formData.get("from") as string) || "/admin";
+    const redirectUrl = (formData.get("from") as string) || "/admin";
 
-    const res = NextResponse.redirect(new URL(redirectUrl, req.url));
+    // Use 303 so the browser turns the POST into a GET on redirect target.
+    const res = NextResponse.redirect(new URL(redirectUrl, req.url), {
+      status: 303,
+    });
     res.cookies.set("admin_auth", "1", {
       httpOnly: false,
       path: "/",
@@ -23,7 +25,7 @@ export async function POST(req: NextRequest) {
 
   const url = new URL("/login", req.url);
   url.searchParams.set("error", "invalid");
-  return NextResponse.redirect(url);
+
+  // Also use 303 when redirecting back to login from a POST.
+  return NextResponse.redirect(url, { status: 303 });
 }
-
-

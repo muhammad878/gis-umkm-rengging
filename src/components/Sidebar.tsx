@@ -28,12 +28,13 @@ interface SidebarProps {
 }
 
 // Map Navigation items
-const MAP_NAV_ITEMS: { view: ViewType; icon: typeof Layers; title: string }[] = [
-  { view: "layers", icon: Layers, title: "Layer & Filter" },
-  { view: "list", icon: List, title: "Daftar Lokasi" },
-  { view: "statistics", icon: ChartColumnBig, title: "Statistik" },
-  { view: "profile", icon: User, title: "Profil" },
-];
+const MAP_NAV_ITEMS: { view: ViewType; icon: typeof Layers; title: string }[] =
+  [
+    { view: "layers", icon: Layers, title: "Layer & Filter" },
+    { view: "list", icon: List, title: "Daftar Lokasi" },
+    { view: "statistics", icon: ChartColumnBig, title: "Statistik" },
+    { view: "profile", icon: User, title: "Profil" },
+  ];
 
 // Admin Navigation items
 const ADMIN_NAV_ITEMS = [
@@ -82,40 +83,42 @@ const Sidebar = ({
 
       {/* Navigation */}
       <nav className="flex-1 flex flex-col gap-6 w-full items-center">
-        {mode === "map" ? (
-          // Map Mode Navigation
-          MAP_NAV_ITEMS.map(({ view, icon: Icon, title }) => (
-            <button
-              key={view}
-              onClick={() => handleClick(view)}
-              className={`p-3 rounded-xl transition-colors cursor-pointer ${currentView === view
-                ? "bg-blue-50 text-blue-600"
-                : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+        {mode === "map"
+          ? // Map Mode Navigation
+            MAP_NAV_ITEMS.map(({ view, icon: Icon, title }) => (
+              <button
+                key={view}
+                onClick={() => handleClick(view)}
+                className={`p-3 rounded-xl transition-colors cursor-pointer ${
+                  currentView === view
+                    ? "bg-blue-50 text-blue-600"
+                    : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
                 }`}
-              title={title}
-            >
-              <Icon className="w-5 h-5" />
-            </button>
-          ))
-        ) : (
-          // Admin Mode Navigation
-          ADMIN_NAV_ITEMS.map(({ href, icon: Icon, title }) => {
-            const isActive = pathname === href || (href !== "/admin" && pathname.startsWith(href));
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={`p-3 rounded-xl transition-colors cursor-pointer ${isActive
-                  ? "bg-blue-50 text-blue-600"
-                  : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
-                  }`}
                 title={title}
               >
                 <Icon className="w-5 h-5" />
-              </Link>
-            );
-          })
-        )}
+              </button>
+            ))
+          : // Admin Mode Navigation
+            ADMIN_NAV_ITEMS.map(({ href, icon: Icon, title }) => {
+              const isActive =
+                pathname === href ||
+                (href !== "/admin" && pathname.startsWith(href));
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`p-3 rounded-xl transition-colors cursor-pointer ${
+                    isActive
+                      ? "bg-blue-50 text-blue-600"
+                      : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+                  }`}
+                  title={title}
+                >
+                  <Icon className="w-5 h-5" />
+                </Link>
+              );
+            })}
       </nav>
 
       {/* Bottom Actions */}
@@ -125,18 +128,14 @@ const Sidebar = ({
             {/* Settings */}
             <button
               onClick={() => handleClick("settings")}
-              className={`p-3 rounded-xl transition-colors cursor-pointer ${currentView === "settings"
-                ? "bg-blue-50 text-blue-600"
-                : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
-                }`}
+              className={`p-3 rounded-xl transition-colors cursor-pointer ${
+                currentView === "settings"
+                  ? "bg-blue-50 text-blue-600"
+                  : "text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+              }`}
               title="Pengaturan"
             >
               <Settings className="w-5 h-5" />
-            </button>
-
-            {/* Menu Button */}
-            <button className="p-3 rounded-xl text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-colors cursor-pointer">
-              <Menu className="w-5 h-5" />
             </button>
           </>
         ) : (
