@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import {
   Plus,
@@ -9,6 +9,8 @@ import {
   MapPin,
   Folder,
   ClipboardList,
+  Search,
+  Filter,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -27,6 +29,8 @@ import {
   TableRow,
   TableCell,
   TableHeader,
+  Input,
+  Select,
 } from "@/components/Admin";
 import { useSupabaseQuery } from "@/hooks/useSupabaseQuery";
 
@@ -52,6 +56,7 @@ export default function AdminDashboard() {
 
   interface DashboardData {
     locations: Location[];
+    categories: { id: string; name: string }[];
     stats: DashboardStats;
   }
 
@@ -76,20 +81,27 @@ export default function AdminDashboard() {
       .from("categories")
       .select("*", { count: "exact", head: true });
 
+    const categoriesListPromise = supabase
+      .from("categories")
+      .select("id, name")
+      .order("name");
+
     const pendingReportCountPromise = supabase
       .from("location_reports")
       .select("*", { count: "exact", head: true })
       .eq("status", "pending");
 
-    const [locationsRes, categoriesRes, reportsRes] = await Promise.all([
+    const [locationsRes, categoriesRes, reportsRes, categoriesListRes] = await Promise.all([
       locationsPromise,
       categoryCountPromise,
       pendingReportCountPromise,
+      categoriesListPromise,
     ]);
 
     if (locationsRes.error) throw locationsRes.error;
     if (categoriesRes.error) throw categoriesRes.error;
     if (reportsRes.error) throw reportsRes.error;
+    if (categoriesListRes.error) throw categoriesListRes.error;
 
     const formattedLocations = (locationsRes.data || []).map((item) => ({
       ...item,
@@ -98,6 +110,7 @@ export default function AdminDashboard() {
 
     return {
       locations: formattedLocations,
+      categories: categoriesListRes.data || [],
       stats: {
         totalLocations:
           locationsRes.count ?? formattedLocations.length ?? 0,
@@ -111,11 +124,32 @@ export default function AdminDashboard() {
     useSupabaseQuery<DashboardData>(fetchDashboardData);
 
   const locations = data?.locations || [];
+  const categories = data?.categories || [];
   const stats = data?.stats || {
     totalLocations: 0,
     totalCategories: 0,
     pendingReports: 0,
   };
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterCondition, setFilterCondition] = useState("");
+
+  const filteredLocations = useMemo(() => {
+    return locations.filter((location) => {
+      const matchesSearch = location.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
+      const matchesCategory = filterCategory
+        ? location.category?.name === filterCategory
+        : true;
+      const matchesCondition = filterCondition
+        ? location.condition === filterCondition
+        : true;
+
+      return matchesSearch && matchesCategory && matchesCondition;
+    });
+  }, [locations, searchQuery, filterCategory, filterCondition]);
 
   const statCards = useMemo(
     () => [
@@ -205,11 +239,53 @@ export default function AdminDashboard() {
       </div>
 
       <Card>
-        <CardHeader title="Daftar Lokasi" />
+        <CardHeader
+          title="Daftar Lokasi"
+          action={
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <span className="font-medium text-gray-900">
+                {filteredLocations.length}
+              </span>{" "}
+              lokasi ditemukan
+            </div>
+          }
+        />
+
+        <div className="p-5 border-b border-gray-100 bg-white grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Input
+              placeholder="Cari lokasi..."
+              className="pl-9"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          <Select
+            value={filterCategory}
+            onChange={(e) => setFilterCategory(e.target.value)}
+          >
+            <option value="">Semua Kategori</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.name}>
+                {cat.name}
+              </option>
+            ))}
+          </Select>
+          <Select
+            value={filterCondition}
+            onChange={(e) => setFilterCondition(e.target.value)}
+          >
+            <option value="">Semua Kondisi</option>
+            <option value="Baik">Baik</option>
+            <option value="Rusak Ringan">Rusak Ringan</option>
+            <option value="Rusak Berat">Rusak Berat</option>
+          </Select>
+        </div>
 
         {loading ? (
           <LoadingState />
-        ) : locations.length === 0 ? (
+        ) : filteredLocations.length === 0 ? (
           <EmptyState
             icon={<MapPin className="w-7 h-7 text-blue-600" />}
             title="Belum ada data lokasi"
@@ -228,7 +304,7 @@ export default function AdminDashboard() {
               </tr>
             </TableHead>
             <TableBody>
-              {locations.map((location) => (
+              {filteredLocations.map((location) => (
                 <TableRow key={location.id}>
                   <TableCell className="font-medium text-gray-900">
                     {location.name}
