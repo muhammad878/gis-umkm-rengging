@@ -1,4 +1,4 @@
-# 🗺️ SIG Desa Rengging
+# 🗺️ SIG Desa Rengging (v1.0)
 
 **Sistem Informasi Geografis (SIG) Desa Rengging, Pecangaan, Jepara.**  
 Sebuah platform pemetaan digital interaktif berbasis web untuk memvisualisasikan infrastruktur, fasilitas publik, dan sebaran UMKM di wilayah Desa Rengging dengan tampilan modern dan premium.
