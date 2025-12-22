@@ -1,134 +1,75 @@
-# Sistem Informasi Geografis (GIS) Desa Jambu Timur
+# 🗺️ SIG Desa Rengging
 
-## Deskripsi Sistem
-
-Sistem Informasi Geografis (SIG) ini bertujuan untuk memetakan infrastruktur dan fasilitas publik di Desa Jambu Timur. Aplikasi berbasis web ini digunakan untuk monitoring kondisi fasilitas, mendukung perencanaan pembangunan, dan meningkatkan keterbukaan informasi kepada masyarakat. Sistem juga menyediakan fitur pelaporan dari pengguna untuk memperbarui kondisi lokasi secara lebih cepat.
-
-### A. Rencana Pemetaan Wilayah
-
-Objek yang dipetakan meliputi:
-*   Kantor desa
-*   Sekolah
-*   Masjid dan mushola
-*   Posyandu
-*   Lapangan desa
-*   Fasilitas dan lokasi umum lainnya
-
-### B. Fitur Aplikasi SIG
-
-*   **Peta Interaktif**: Menampilkan lokasi fasilitas desa dengan marker yang informatif.
-*   **Layer Pemetaan**: Visualisasi berdasarkan kategori fasilitas dan infrastruktur.
-*   **Pencarian Lokasi**: Memudahkan pencarian berdasarkan nama atau kategori.
-*   **Informasi Detail**: Menampilkan data lengkap pada setiap marker (nama, kondisi, foto).
-*   **Manajemen Data Admin**: Fitur untuk menambah, mengedit, dan menghapus lokasi (memerlukan autentikasi).
-*   **Dashboard Monitoring**: Menampilkan statistik ringkas mengenai fasilitas desa.
-*   **Laporan Warga**: Memungkinkan warga mengirimkan pembaruan kondisi atau kerusakan fasilitas.
-
-### C. Alur Kerja Sistem
-
-1.  **Pengumpulan dan pencatatan data geografis**: Data awal dikumpulkan dari lapangan.
-2.  **Admin memasukkan data ke sistem**: Data diinput sesuai kategori yang relevan.
-3.  **User mengakses aplikasi melalui browser**: Masyarakat dapat melihat peta sebaran fasilitas.
-4.  **User memilih layer dan melihat informasi lokasi**: Eksplorasi data secara interaktif.
-5.  **Warga dapat mengirim laporan kondisi terbaru**: Partisipasi aktif masyarakat dalam pemeliharaan data.
-6.  **Admin memverifikasi laporan dan memperbarui peta**: Validasi data untuk menjaga keakuratan informasi.
-
-### D. Manfaat Sistem
-
-*   Mempermudah monitoring kondisi infrastruktur desa.
-*   Mendukung perencanaan pembangunan yang lebih tepat sasaran.
-*   Meningkatkan transparansi informasi publik.
-*   Mempercepat pembaruan data melalui laporan masyarakat.
+**Sistem Informasi Geografis (SIG) Desa Rengging, Pecangaan, Jepara.**  
+Sebuah platform pemetaan digital interaktif berbasis web untuk memvisualisasikan infrastruktur, fasilitas publik, dan sebaran UMKM di wilayah Desa Rengging dengan tampilan modern dan premium.
 
 ---
 
-## Live Demo
+## ✨ Fitur Utama
 
-Anda dapat langsung mencoba aplikasi ini melalui tautan berikut:
-[https://gis-seven-khaki.vercel.app/](https://gis-seven-khaki.vercel.app/)
-
-Silakan eksplorasi fitur-fitur yang tersedia:
-*   Melihat data lokasi pada peta.
-*   Melaporkan kondisi fasilitas sebagai warga.
-*   Login sebagai admin untuk mengelola data.
-
-**Kredensial Admin:**
-*   **Username:** `admin`
-*   **Password:** `admin123`
+- **📍 Pemetaan Interaktif**: Visualisasi batas wilayah desa, jaringan jalan, aliran sungai, dan area persawahan secara detail.
+- **🏬 Katalog Lokasi & Fasilitas**: Informasi lengkap mengenai fasilitas pemerintah, pendidikan, kesehatan, dan tempat ibadah.
+- **🛍️ Ekosistem UMKM**: Fitur khusus untuk memetakan lokasi unit usaha mikro, kecil, dan menengah dengan navigasi langsung ke WhatsApp.
+- **🔐 Sistem Autentikasi**: Fitur Login & Registrasi terintegrasi dengan **Supabase Auth** untuk keamanan data.
+- **📊 Statistik Desa**: Ringkasan data jumlah fasilitas dan sebaran infrastruktur wilayah.
+- **📱 Responsive & Premium UI**: Sidebar futuristik dan antarmuka yang dioptimalkan untuk berbagai layar.
 
 ---
 
-## Teknologi yang Digunakan
+## 🚀 Teknologi yang Digunakan
 
-*   **Frontend**: [Next.js](https://nextjs.org/) (React Framework), [Tailwind CSS](https://tailwindcss.com/) (Styling).
-*   **Peta**: [React Leaflet](https://react-leaflet.js.org/) / [Leaflet](https://leafletjs.com/), [MapTiler](https://www.maptiler.com/) (Base Maps).
-*   **Backend / Database**: [Supabase](https://supabase.com/) (PostgreSQL + PostGIS).
-*   **Icons**: [Lucide React](https://lucide.dev/).
-*   **Charts**: [Recharts](https://recharts.org/).
+- **Frontend**: [Next.js 15+](https://nextjs.org/) (React), [Tailwind CSS](https://tailwindcss.com/)
+- **Peta Digital**: [React Leaflet](https://react-leaflet.js.org/) & [OpenStreetMap](https://www.openstreetmap.org/)
+- **Backend & Database**: [Supabase](https://supabase.com/) (PostgreSQL & PostGIS)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Data Spasial**: GeoJSON & Shapefile (SHP) processing
 
-## Prasyarat
+---
 
-Sebelum menjalankan project ini, pastikan Anda telah menginstal:
-*   [Node.js](https://nodejs.org/) (Versi LTS direkomendasikan).
-*   Akun [Supabase](https://supabase.com/) untuk database.
+## 🛠️ Panduan Instalasi
 
-## Cara Menjalankan Project
-
-Ikuti langkah-langkah berikut untuk menjalankan aplikasi di komputer lokal Anda:
-
-### 1. Clone Repository
-
+### 1. Kloning Repositori
 ```bash
-git clone <https://github.com/rianmubarok/gis>
+git clone [url-repositori-anda]
 cd gis
 ```
 
-### 2. Install Dependencies
-
-Install semua library yang dibutuhkan menggunakan npm:
-
+### 2. Instalasi Dependensi
 ```bash
 npm install
 ```
 
 ### 3. Konfigurasi Environment Variables
-
-Buat file `.env.local` di root project dan tambahkan konfigurasi berikut (sesuaikan dengan kredensial Anda):
-
+Buat file `.env.local` di direktori utama dan isi dengan kredensial Supabase Anda:
 ```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-
-# Map Configuration
-NEXT_PUBLIC_MAPTILER_API_KEY=your_maptiler_api_key
-
-# Admin
-ADMIN_USER=admin
-ADMIN_PASSWORD=admin123
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-url.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_MAPTILER_API_KEY=your-maptiler-key
 ```
 
-### 4. Setup Database
+### 4. Setup Database (Supabase)
+Jalankan script SQL yang tersedia di folder root ke dalam SQL Editor Supabase secara berurutan:
+1. `supabase_setup.sql` (Infrastruktur & Lokasi)
+2. `supabase_umkm.sql` (Sistem UMKM)
 
-Jalankan script SQL yang terdapat di file `supabase_setup.sql` pada SQL Editor di dashboard Supabase Anda. Script ini akan:
-*   Mengaktifkan ekstensi PostGIS.
-*   Membuat tabel yang diperlukan (`categories`, `locations`, `location_images`, dll).
-*   Mengatur Row Level Security (RLS) policies.
-
-### 5. Jalankan Aplikasi
-
-Jalankan development server:
-
+### 5. Menjalankan Aplikasi
 ```bash
 npm run dev
 ```
+Aplikasi akan berjalan di [http://localhost:3000](http://localhost:3000).
 
-Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
+---
 
-## Struktur Folder
+## 📂 Struktur Folder
+- `/src/app`: Logika navigasi dan halaman utama (App Router).
+- `/src/components`: Komponen UI (Peta, Sidebar, Control Panel, Modals).
+- `/src/hooks`: Logika custom React Hooks (Auth, Database).
+- `/src/lib`: Konfigurasi library eksternal (Supabase Client).
+- `/public/data`: Data GeoJSON wilayah Desa Rengging.
 
-*   `src/app`: Halaman-halaman aplikasi (Next.js App Router).
-*   `src/components`: Komponen UI yang dapat digunakan kembali (Map, Sidebar, ControlPanel, dll).
-*   `src/lib`: Utilitas dan konfigurasi klien Supabase.
-*   `src/types`: Definisi tipe TypeScript.
+---
+
+## 📝 Kontribusi
+Platform ini dikembangkan untuk memudahkan masyarakat dan perangkat desa dalam memantau perencanaan pembangunan serta mempromosikan UMKM lokal Desa Rengging.
+
+**SIG Desa Rengging - Menuju Digitalisasi Desa.**

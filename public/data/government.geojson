@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FGSGOV": 10,
+        "LUAS": 0,
+        "FCODE": null,
+        "REMARK": "Kantor Kepala Desa",
+        "SRS_ID": null,
+        "LCODE": "GD0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.70982218900008,
+          -6.678903907999938
+        ]
+      }
+    }
+  ]
+}

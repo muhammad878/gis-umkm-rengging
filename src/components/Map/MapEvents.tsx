@@ -5,9 +5,10 @@ import { useMapEvents } from "react-leaflet";
 
 interface MapEventsProps {
   onZoomChange: (zoom: number) => void;
+  onClick?: (latlng: { lat: number; lng: number }) => void;
 }
 
-export const MapEvents = ({ onZoomChange }: MapEventsProps) => {
+export const MapEvents = ({ onZoomChange, onClick }: MapEventsProps) => {
   const mountedRef = useRef(true);
 
   useEffect(() => {
@@ -25,6 +26,11 @@ export const MapEvents = ({ onZoomChange }: MapEventsProps) => {
         } catch {
           // Ignore errors
         }
+      }
+    },
+    click: (e) => {
+      if (mountedRef.current && onClick) {
+        onClick(e.latlng);
       }
     },
   });

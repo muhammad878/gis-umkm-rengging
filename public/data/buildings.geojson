@@ -1,0 +1,1175 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72783382300008,
+          -6.665041621999933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72614201600004,
+          -6.666247601999942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72558485600007,
+          -6.666285556999981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72650794400005,
+          -6.666808655999944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72666669300008,
+          -6.667032269999936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72734316300006,
+          -6.667042232999961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72764485300007,
+          -6.667118928999969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72699564900006,
+          -6.667211291999934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72951698300005,
+          -6.667876564999972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72803719400008,
+          -6.66802329199993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71299746700004,
+          -6.668784225999957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71296744200004,
+          -6.668917816999965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71411962200006,
+          -6.669252372999949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71450104400009,
+          -6.669283621999966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71486636100008,
+          -6.669473436999965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71947104200007,
+          -6.669994229999929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72041892500005,
+          -6.670190160999937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72003506600004,
+          -6.670304374999944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71906501600006,
+          -6.670904385999961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72052007900004,
+          -6.670983188999969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72067192900005,
+          -6.671085223999967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71989113700005,
+          -6.6712313259999405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72016287800005,
+          -6.671313164999958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71497208600005,
+          -6.671421729999963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72055327900006,
+          -6.671470243999977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71973271200005,
+          -6.671557071999928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72733813400004,
+          -6.671721810999941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71770851000008,
+          -6.671721820999949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71997326300004,
+          -6.671754048999958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72796118800005,
+          -6.6718086339999445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71392352700008,
+          -6.671809737999979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71792921100007,
+          -6.671823804999974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71818806400006,
+          -6.671975201999942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71393106500005,
+          -6.672072256999968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71715668000007,
+          -6.672234320999962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71738915400005,
+          -6.6723170439999535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71385817200007,
+          -6.673892354999964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71438768800004,
+          -6.674111665999931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71339040700008,
+          -6.674682791999942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71380746100004,
+          -6.674748165999972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71355664900005,
+          -6.674772624999946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72299699600006,
+          -6.674873906999949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71370504400005,
+          -6.674900711999953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72294714200007,
+          -6.675038967999967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71397024100008,
+          -6.675035107999975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72352386400007,
+          -6.675307866999958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72386609100005,
+          -6.675545334999981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72403910800006,
+          -6.675657873999967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71419607400009,
+          -6.677520891999961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71431522800009,
+          -6.677682431999926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71474815200008,
+          -6.6778446959999656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72431906700007,
+          -6.677874838999969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71483099100004,
+          -6.677909512999975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72458091200008,
+          -6.678023519999954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72477799200004,
+          -6.678144936999956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72233769400009,
+          -6.678256913999974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71227429700008,
+          -6.678561417999958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71241215900005,
+          -6.678603471999963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71253615400008,
+          -6.67868468599994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71787556700008,
+          -6.679080729999953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72307111400005,
+          -6.679508837999947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71777093600008,
+          -6.679624694999973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71618783000008,
+          -6.687066450999964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71612083900004,
+          -6.6871314529999495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "FCODE": null,
+        "REMARK": "Gedung/Bangunan",
+        "SRS_ID": null,
+        "LCODE": "GA0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71608885200004,
+          -6.68737232899997
+        ]
+      }
+    }
+  ]
+}

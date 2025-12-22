@@ -3,9 +3,9 @@ export const SIDEBAR_WIDTH = 64;
 export const PANEL_WIDTH = 256;
 export const TOGGLE_BUTTON_SIZE = 36;
 
-// Map configuration
-export const MAP_CENTER: [number, number] = [-6.535, 110.74];
-export const DEFAULT_ZOOM = 14;
+// Map configuration - Desa Rengging, Kecamatan Tahunan, Kabupaten Jepara
+export const MAP_CENTER: [number, number] = [-6.680, 110.720];
+export const DEFAULT_ZOOM = 15;
 
 // Category colors for markers
 export const CATEGORY_COLORS = [
@@ -19,13 +19,6 @@ export const CATEGORY_COLORS = [
   "#bae6fd",
 ] as const;
 
-// Condition filter options
-export const CONDITION_FILTERS = [
-  "Baik",
-  "Rusak Ringan",
-  "Rusak Berat",
-] as const;
-
 // Map style options
 export const MAP_STYLES = [
   { id: "streets", name: "Streets" },
@@ -36,4 +29,4 @@ export const MAP_STYLES = [
 ] as const;
 
 // View types
-export type ViewType = "layers" | "list" | "profile" | "settings" | "statistics";
+export type ViewType = "layers" | "list" | "settings" | "statistics";

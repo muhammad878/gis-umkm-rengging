@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "FGSIBD": 1,
+        "FCODE": null,
+        "REMARK": "Masjid",
+        "SRS_ID": null,
+        "LCODE": "GF0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71410209500004,
+          -6.666710985999941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "FGSIBD": 1,
+        "FCODE": null,
+        "REMARK": "Masjid",
+        "SRS_ID": null,
+        "LCODE": "GF0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72620406700008,
+          -6.671163496999952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "FGSIBD": 1,
+        "FCODE": null,
+        "REMARK": "Masjid",
+        "SRS_ID": null,
+        "LCODE": "GF0020",
+        "METADATA": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.71543215600008,
+          -6.6881669999999644
+        ]
+      }
+    }
+  ]
+}

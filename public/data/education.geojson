@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "KATPDK": 0,
+        "JLPDDK": 0,
+        "FGGPDK": 999,
+        "REMARK": "Pendidikan/Penelitian Lainnya",
+        "FCODE": null,
+        "SRS_ID": null,
+        "LCODE": "GE0020",
+        "METADATA": null,
+        "JJGPDF": 999,
+        "JNSPDL": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72702902300006,
+          -6.67017378099996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "KATPDK": 0,
+        "JLPDDK": 0,
+        "FGGPDK": 999,
+        "REMARK": "Pendidikan/Penelitian Lainnya",
+        "FCODE": null,
+        "SRS_ID": null,
+        "LCODE": "GE0020",
+        "METADATA": null,
+        "JJGPDF": 999,
+        "JNSPDL": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.72257645700006,
+          -6.675532669999939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "KATPDK": 0,
+        "JLPDDK": 0,
+        "FGGPDK": 999,
+        "REMARK": "Pendidikan/Penelitian Lainnya",
+        "FCODE": null,
+        "SRS_ID": null,
+        "LCODE": "GE0020",
+        "METADATA": null,
+        "JJGPDF": 999,
+        "JNSPDL": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.70953676100004,
+          -6.680550558999926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAMOBJ": null,
+        "LUAS": 0,
+        "KATPDK": 0,
+        "JLPDDK": 0,
+        "FGGPDK": 999,
+        "REMARK": "Pendidikan/Penelitian Lainnya",
+        "FCODE": null,
+        "SRS_ID": null,
+        "LCODE": "GE0020",
+        "METADATA": null,
+        "JJGPDF": 999,
+        "JNSPDL": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.70753467500003,
+          -6.686674126999947
+        ]
+      }
+    }
+  ]
+}

@@ -61,6 +61,25 @@ export default function AdminDashboard() {
   }
 
   const fetchDashboardData = useCallback(async () => {
+    // Check if Supabase is properly configured
+    const supabaseUrl = (supabase as any)['supabaseUrl'] as string;
+    const isDefaultOrDemo = !supabaseUrl ||
+      supabaseUrl.includes('placeholder') ||
+      supabaseUrl.includes('demo.supabase.co') ||
+      supabaseUrl === 'https://your-project.supabase.co';
+
+    if (isDefaultOrDemo) {
+      return {
+        locations: [],
+        categories: [],
+        stats: {
+          totalLocations: 0,
+          totalCategories: 0,
+          pendingReports: 0,
+        },
+      } as DashboardData;
+    }
+
     const locationsPromise = supabase
       .from("locations")
       .select(

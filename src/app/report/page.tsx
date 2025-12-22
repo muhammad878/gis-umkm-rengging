@@ -27,6 +27,19 @@ export default function ReportPage() {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
+        // Check if Supabase is properly configured
+        const supabaseUrl = (supabase as any)['supabaseUrl'] as string;
+        const isDefaultOrDemo = !supabaseUrl ||
+          supabaseUrl.includes('placeholder') ||
+          supabaseUrl.includes('demo.supabase.co') ||
+          supabaseUrl === 'https://your-project.supabase.co';
+
+        if (isDefaultOrDemo) {
+          setLocations([]);
+          setLoading(false);
+          return;
+        }
+
         const { data, error } = await supabase
           .from("locations")
           .select("id, name")
@@ -55,6 +68,19 @@ export default function ReportPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Check if Supabase is properly configured
+    const supabaseUrl = (supabase as any)['supabaseUrl'] as string;
+    const isDefaultOrDemo = !supabaseUrl ||
+      supabaseUrl.includes('placeholder') ||
+      supabaseUrl.includes('demo.supabase.co') ||
+      supabaseUrl === 'https://your-project.supabase.co';
+
+    if (isDefaultOrDemo) {
+      alert('Fitur ini memerlukan konfigurasi Supabase yang valid. Silakan hubungi admin.');
+      return;
+    }
+
     setSubmitting(true);
 
     try {

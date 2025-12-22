@@ -111,7 +111,7 @@ export const StatisticsView = ({ locations, categories }: StatisticsViewProps) =
             <div className="pt-4 border-t border-gray-100">
                 <h3 className="text-sm font-bold text-gray-900 mb-2">Tentang Desa</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                    Desa Jambu Timur merupakan salah satu desa di Kecamatan Mlonggo, Kabupaten Jepara.
+                    Desa Rengging merupakan salah satu desa di Kecamatan Pecangaan, Kabupaten Jepara.
                     Sistem Informasi Geografis ini memetakan infrastruktur dan fasilitas publik yang ada di desa
                     untuk memudahkan pemantauan dan perencanaan pembangunan.
                 </p>

@@ -32,6 +32,17 @@ interface Category {
 
 export default function CategoriesPage() {
   const fetchCategories = useCallback(async () => {
+    // Check if Supabase is properly configured
+    const supabaseUrl = (supabase as any)['supabaseUrl'] as string;
+    const isDefaultOrDemo = !supabaseUrl ||
+      supabaseUrl.includes('placeholder') ||
+      supabaseUrl.includes('demo.supabase.co') ||
+      supabaseUrl === 'https://your-project.supabase.co';
+
+    if (isDefaultOrDemo) {
+      return [];
+    }
+
     const { data, error } = await supabase
       .from("categories")
       .select("*, subcategories(count)");

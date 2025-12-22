@@ -1,6 +1,5 @@
 import { Search, Filter, Layers, ChevronDown, ChevronRight } from "lucide-react";
 import { Category, Location } from "@/types";
-import { CONDITION_FILTERS } from "@/constants";
 import { useState, useMemo } from "react";
 import { LocationItem } from "./LocationItem";
 
@@ -8,30 +7,30 @@ interface LayersViewProps {
   categories: Category[];
   locations: Location[];
   selectedSubcategories: string[];
-  selectedConditions: string[];
   loading: boolean;
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onReset: () => void;
   onSubcategoryChange: (id: string) => void;
   onSubcategoriesChange: (ids: string[]) => void;
-  onConditionChange: (condition: string) => void;
   onLocationClick?: (location: Location) => void;
+  visibleLayers: string[];
+  onVisibleLayersChange: (layers: string[]) => void;
 }
 
 export const LayersView = ({
   categories,
   locations,
   selectedSubcategories,
-  selectedConditions,
   loading,
   searchQuery,
   onSearchChange,
   onReset,
   onSubcategoryChange,
   onSubcategoriesChange,
-  onConditionChange,
   onLocationClick,
+  visibleLayers,
+  onVisibleLayersChange,
 }: LayersViewProps) => {
   // Calculate used subcategory IDs
   const usedSubcategoryIds = useMemo(() => {
@@ -55,6 +54,13 @@ export const LayersView = ({
         loc.address?.toLowerCase().includes(query)
     );
   }, [locations, searchQuery]);
+
+  const handleLayerToggle = (id: string) => {
+    const updated = visibleLayers.includes(id)
+      ? visibleLayers.filter(l => l !== id)
+      : [...visibleLayers, id];
+    onVisibleLayersChange(updated);
+  };
 
   return (
     <>
@@ -109,12 +115,59 @@ export const LayersView = ({
                 Layer Pemetaan
               </h2>
               <button
-                onClick={onReset}
+                onClick={() => {
+                  onReset();
+                  onVisibleLayersChange(['boundary', 'roads', 'rivers', 'riceFields', 'facilities']);
+                }}
                 className="text-[10px] text-blue-600 font-medium hover:text-blue-700 cursor-pointer"
               >
                 Reset
               </button>
             </div>
+
+            {/* Base Geographic Layers */}
+            <div className="mb-4 space-y-1">
+              <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Data Geografis</h3>
+              <div className="grid grid-cols-1 gap-1">
+                <LayerToggleItem
+                  id="boundary"
+                  label="Batas Desa"
+                  icon="🌀"
+                  checked={visibleLayers.includes('boundary')}
+                  onChange={() => handleLayerToggle('boundary')}
+                />
+                <LayerToggleItem
+                  id="riceFields"
+                  label="Area Sawah"
+                  icon="🌾"
+                  checked={visibleLayers.includes('riceFields')}
+                  onChange={() => handleLayerToggle('riceFields')}
+                />
+                <LayerToggleItem
+                  id="rivers"
+                  label="Aliran Sungai"
+                  icon="🌊"
+                  checked={visibleLayers.includes('rivers')}
+                  onChange={() => handleLayerToggle('rivers')}
+                />
+                <LayerToggleItem
+                  id="roads"
+                  label="Jaringan Jalan"
+                  icon="🛣️"
+                  checked={visibleLayers.includes('roads')}
+                  onChange={() => handleLayerToggle('roads')}
+                />
+                <LayerToggleItem
+                  id="facilities"
+                  label="Fasilitas Umum"
+                  icon="📍"
+                  checked={visibleLayers.includes('facilities')}
+                  onChange={() => handleLayerToggle('facilities')}
+                />
+              </div>
+            </div>
+
+            <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Kategori Infrastruktur</h3>
 
             {loading ? (
               <div className="text-xs text-gray-500">Memuat kategori...</div>
@@ -167,30 +220,6 @@ export const LayersView = ({
             )}
           </div>
 
-          {/* Condition Filters */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-xs font-semibold text-gray-900 flex items-center gap-1.5">
-                <Filter className="w-3.5 h-3.5" />
-                Filter Kondisi
-              </h2>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5">
-              {CONDITION_FILTERS.map((status) => (
-                <button
-                  key={status}
-                  onClick={() => onConditionChange(status)}
-                  className={`px-2.5 py-1 text-[10px] font-medium rounded-full transition-colors cursor-pointer ${selectedConditions.includes(status)
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    }`}
-                >
-                  {status}
-                </button>
-              ))}
-            </div>
-          </div>
         </>
       )}
     </>
@@ -333,5 +362,48 @@ const CheckboxItem = ({
     <span className="text-xs text-gray-600 group-hover:text-gray-900">
       {label}
     </span>
+  </label>
+);
+
+// Layer Toggle Item for geographic layers
+interface LayerToggleItemProps {
+  id: string;
+  label: string;
+  icon: string;
+  checked: boolean;
+  onChange: () => void;
+}
+
+const LayerToggleItem = ({
+  label,
+  icon,
+  checked,
+  onChange,
+}: LayerToggleItemProps) => (
+  <label
+    className={`flex items-center justify-between p-2 rounded-lg border transition-all cursor-pointer ${checked
+      ? "bg-blue-50 border-blue-200"
+      : "bg-white border-gray-100 hover:border-gray-200"
+      }`}
+  >
+    <div className="flex items-center gap-2">
+      <span className="text-sm">{icon}</span>
+      <span className={`text-xs font-medium ${checked ? "text-blue-700" : "text-gray-600"}`}>
+        {label}
+      </span>
+    </div>
+    <div
+      onClick={(e) => {
+        e.preventDefault();
+        onChange();
+      }}
+      className={`w-8 h-4 rounded-full relative transition-colors ${checked ? "bg-blue-600" : "bg-gray-200"
+        }`}
+    >
+      <div
+        className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${checked ? "left-4.5" : "left-0.5"
+          }`}
+      />
+    </div>
   </label>
 );
