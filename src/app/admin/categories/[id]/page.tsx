@@ -14,6 +14,8 @@ import {
   IconButton,
 } from "@/components/Admin";
 
+export const runtime = 'edge';
+
 interface Subcategory {
   id: string;
   name: string;

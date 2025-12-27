@@ -15,6 +15,8 @@ import {
 } from "@/components/Admin";
 import { useSupabaseQuery } from "@/hooks/useSupabaseQuery";
 
+export const runtime = 'edge';
+
 export default function EditLocationPage({
   params,
 }: {
